@@ -599,5 +599,20 @@ export class ProductListComponent {
     },
   ];
 
-  // Angular course 21 -- proacademy
+  totalProductCount = this.products.length;
+
+  totalProductInStock = this.products.filter(
+    (product) => product.is_in_inventory
+  ).length;
+
+  totalProductOutOfStock = this.products.filter(
+    (product) => !product.is_in_inventory
+  ).length;
+
+  selectedFilterRadioButton: string = 'all';
+
+  onFilterChanged(value: string) {
+    console.log(value);
+    this.selectedFilterRadioButton = value;
+  }
 }

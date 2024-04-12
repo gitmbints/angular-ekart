@@ -1,0 +1,30 @@
+<div class="filter-container">
+  <span>Filter: </span>
+
+  <input
+    type="radio"
+    name="filter"
+    value="all"
+    #selectedFilterAll
+    (change)="onSelectedFilterRadioButtonChanged(selectedFilterAll.value)"
+  />
+  <span>{{ "All (" + all + ")" }}</span>
+
+  <input
+    type="radio"
+    name="filter"
+    value="true"
+    #selectedFilterTrue
+    (change)="onSelectedFilterRadioButtonChanged(selectedFilterTrue.value)"
+  />
+  <span>{{ "In Stock (" + inStock + ")" }}</span>
+
+  <input
+    type="radio"
+    name="filter"
+    value="false"
+    #selectedFilterFalse
+    (change)="onSelectedFilterRadioButtonChanged(selectedFilterFalse.value)"
+  />
+  <span>{{ "Out of Stock (" + outOfStock + ")" }}</span>
+</div>
