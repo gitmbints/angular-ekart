@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class ContainerComponent {
   // name: string = 'John Doe';
   addToCart: number = 0;
+  searchText: string = '';
 
   product = {
     name: 'iPhone',
@@ -34,5 +35,9 @@ export class ContainerComponent {
     if (this.addToCart < this.product.inStock) {
       this.addToCart++;
     }
+  }
+
+  setSearchText(value: string) {
+    this.searchText = value;
   }
 }

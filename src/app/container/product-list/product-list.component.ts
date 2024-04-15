@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-product-list',
@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./product-list.component.css'],
 })
 export class ProductListComponent {
+  @Input() searchText: string = '';
+
   products = [
     {
       id: 1,
@@ -612,7 +614,6 @@ export class ProductListComponent {
   selectedFilterRadioButton: string = 'all';
 
   onFilterChanged(value: string) {
-    console.log(value);
     this.selectedFilterRadioButton = value;
   }
 }

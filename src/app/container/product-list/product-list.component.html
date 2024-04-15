@@ -9,12 +9,9 @@
   <div *ngFor="let product of products; let i = index">
     <app-product
       [product]="product"
-      *ngIf="
-        selectedFilterRadioButton === 'all' ||
-        product.is_in_inventory.toString() === selectedFilterRadioButton
-      "
+      *ngIf="searchText === '' || product.name.toLowerCase().includes(searchText.toLowerCase())"
     ></app-product>
   </div>
 </div>
 
-<!-- ProAcademy #28 -->
+<!-- ProAcademy #29 -->
