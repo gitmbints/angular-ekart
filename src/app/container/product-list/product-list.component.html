@@ -1,16 +1,16 @@
-<app-filter
+<filter
   [all]="totalProductCount"
   [inStock]="totalProductInStock"
   [outOfStock]="totalProductOutOfStock"
   (selectedFilterRadioButtonChanged)="onFilterChanged($event)"
-></app-filter>
+></filter>
 
 <div class="ekart--products--container">
-  <div *ngFor="let product of products; let i = index">
-    <app-product
+  <div *ngFor="let product of products; let i = index" (click)="selectedProduct = product">
+    <product
       [product]="product"
       *ngIf="searchText === '' || product.name.toLowerCase().includes(searchText.toLowerCase())"
-    ></app-product>
+    ></product>
   </div>
 </div>
 

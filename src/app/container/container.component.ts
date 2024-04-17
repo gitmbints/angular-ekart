@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { ProductListComponent } from './product-list/product-list.component';
 
 @Component({
-  selector: 'app-container',
+  selector: 'container',
   templateUrl: './container.component.html',
   styleUrls: ['./container.component.css'],
 })
@@ -9,6 +10,10 @@ export class ContainerComponent {
   // name: string = 'John Doe';
   addToCart: number = 0;
   searchText: string = '';
+
+
+  // Store reference of ProductListComponent
+  @ViewChild(ProductListComponent) productListComponentofParent: ProductListComponent;
 
   product = {
     name: 'iPhone',
