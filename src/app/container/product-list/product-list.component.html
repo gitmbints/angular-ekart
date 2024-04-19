@@ -6,12 +6,16 @@
 ></filter>
 
 <div class="ekart--products--container">
-  <div *ngFor="let product of products; let i = index" (click)="selectedProduct = product">
+  <ng-container *ngFor="let product of products; let i = index">
     <product
       [product]="product"
-      *ngIf="searchText === '' || product.name.toLowerCase().includes(searchText.toLowerCase())"
+      *ngIf="
+        searchText === '' ||
+        product.name.toLowerCase().includes(searchText.toLowerCase())
+      "
+      (click)="selectedProduct = product"
     ></product>
-  </div>
+  </ng-container>
 </div>
 
 <!-- ProAcademy #29 -->

@@ -46,6 +46,7 @@
 .ekart--product--image {
   width: 265px;
   height: 250px;
+  object-fit: cover;
 }
 
 .ekart--product--name {
