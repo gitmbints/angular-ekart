@@ -18,10 +18,17 @@
     <div class="ekart-product-detail-price">
       <p>
         <b>Price Each Pair:</b>
-        <span style="background-color: red; color: white"
-          ><s>${{ product.price }}</s></span
-        >
-        <span style="background-color: green; color: white"
+
+        <span *ngIf="!product.discountPrice; else price" style="background-color: green; color: white">
+          ${{ product.price }}
+        </span>
+
+        <ng-template #price>
+          <span style="background-color: red; color: white">
+            <s>${{ product.price }}</s>
+          </span>
+        </ng-template>
+        <span *ngIf="product.discountPrice" style="background-color: green; color: white"
           >${{ product.discountPrice }}</span
         >
         (Inclusive of all taxes)
