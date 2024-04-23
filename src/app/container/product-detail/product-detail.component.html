@@ -11,15 +11,26 @@
       <h2>{{ product.name }}</h2>
     </div>
     <div class="ekart-product-detail-gbc">
-      <span>{{ product.gender }}</span>
-      <span>{{ product.brand }}</span>
-      <span>{{ product.category }}</span>
+      <span
+        [setBackground]="{ backgroundColor: 'yellow', textColor: 'black' }"
+        >{{ product.gender }}</span
+      >
+      <span
+        [setBackground]="{ backgroundColor: 'green', textColor: 'white' }"
+        >{{ product.brand }}</span
+      >
+      <span [setBackground]="{ backgroundColor: 'red', textColor: 'white' }">{{
+        product.category
+      }}</span>
     </div>
     <div class="ekart-product-detail-price">
       <p>
         <b>Price Each Pair:</b>
 
-        <span *ngIf="!product.discountPrice; else price" style="background-color: green; color: white">
+        <span
+          *ngIf="!product.discountPrice; else price"
+          style="background-color: green; color: white"
+        >
           ${{ product.price }}
         </span>
 
@@ -28,7 +39,9 @@
             <s>${{ product.price }}</s>
           </span>
         </ng-template>
-        <span *ngIf="product.discountPrice" style="background-color: green; color: white"
+        <span
+          *ngIf="product.discountPrice"
+          style="background-color: green; color: white"
           >${{ product.discountPrice }}</span
         >
         (Inclusive of all taxes)
@@ -73,11 +86,12 @@
     <button
       class="btn-add-to-cart"
       *ngIf="product.is_in_inventory; else notifyMe"
+      AppHover
     >
       ADD TO CART
     </button>
     <ng-template #notifyMe>
-      <button class="btn-add-to-cart">NOTIFY ME</button>
+      <button class="btn-add-to-cart" AppHover>NOTIFY ME</button>
     </ng-template>
   </div>
 </div>
