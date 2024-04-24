@@ -4,8 +4,6 @@ import { Directive, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
   selector: '[setBackground]',
 })
 export class SetBackground implements OnInit {
-  /* @Input('setBackground') backgroundColor: string = '#36454F';
-  @Input() textColor: string = 'white'; */
 
   @Input('setBackground') changeTextAndBgColor: {
     backgroundColor: string;
@@ -20,6 +18,7 @@ export class SetBackground implements OnInit {
       'backgroundColor',
       this.changeTextAndBgColor.backgroundColor
     );
+    
     this.renderer.setStyle(
       this.element.nativeElement,
       'color',

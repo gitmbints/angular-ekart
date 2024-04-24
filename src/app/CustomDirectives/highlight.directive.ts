@@ -11,7 +11,8 @@ export class HighlightDirective {
     this.renderer.addClass(this.element.nativeElement, 'highlight-product');
   }
 
-  @HostListener('mouseout') OnMouseOut() {
+  @HostListener('mouseout')
+  OnMouseOut() {
     this.renderer.removeClass(this.element.nativeElement, 'highlight-product');
   }
 }
